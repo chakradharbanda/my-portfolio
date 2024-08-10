@@ -12,14 +12,15 @@ import ChevronRightRoundedIcon from "@mui/icons-material/ChevronRightRounded";
 import DevicesRoundedIcon from "@mui/icons-material/DevicesRounded";
 import EdgesensorHighRoundedIcon from "@mui/icons-material/EdgesensorHighRounded";
 import ViewQuiltRoundedIcon from "@mui/icons-material/ViewQuiltRounded";
-import CheckCircleRoundedIcon from '@mui/icons-material/CheckCircleRounded';
+import CheckCircleRoundedIcon from "@mui/icons-material/CheckCircleRounded";
 
 const items = [
   {
     icon: <ViewQuiltRoundedIcon />,
     title: "Senior Systems Engineer | July 2023 - Present",
-    description: "Infosys Bengaluru, Karnataka, India | Horizon Digital Platform",
-    points : [
+    description:
+      "Infosys Bengaluru, Karnataka, India | Horizon Digital Platform",
+    points: [
       "Integrated RESTful APIs",
       "Enhanced scalability across 4 sub-organizations",
       "Managed sites across over 100 locations in the USA",
@@ -31,16 +32,16 @@ const items = [
       "Implemented offline functionality",
       "Boosted user satisfaction by 35%",
       "Conducted code reviews and knowledge transfer sessions",
-      "Upheld Agile SCRUM methodology"
-    ],    
-    imageLight:
-      'url("/static/images/templates/templates-images/dash-light.png")',
-    imageDark: 'url("/static/images/templates/templates-images/dash-dark.png")',
+      "Upheld Agile SCRUM methodology",
+    ],
+    imageLight: "null",
+    imageDark: "null",
   },
   {
     icon: <EdgesensorHighRoundedIcon />,
     title: "Systems Engineer | May 2021 - June 2023",
-    description: "Infosys Bengaluru, Karnataka, India | Horizon Digital Platform",
+    description:
+      "Infosys Bengaluru, Karnataka, India | Horizon Digital Platform",
     points: [
       "Delivered 4 progressive web applications",
       "Improved performance by 30% with offline data store management",
@@ -52,21 +53,26 @@ const items = [
       "Enhanced user input interactions by 20%",
       "Integrated custom features related to camera, PDFs, excels",
       "Managed data with third-party libraries",
-      "Proficient in Git and GitHub for version control"
-    ],    
-    imageLight:
-      'url("/static/images/templates/templates-images/mobile-light.png")',
-    imageDark:
-      'url("/static/images/templates/templates-images/mobile-dark.png")',
+      "Proficient in Git and GitHub for version control",
+    ],
+    imageLight: "null",
+    imageDark: "null",
   },
   {
     icon: <DevicesRoundedIcon />,
     title: "Smart Inventory Management System",
-    description: "Developed a responsive Inventory Management System using Angular and Spring Boot",
-    imageLight:
-      'url("/Screenshot Add Product.png")',
-    imageDark:
-      'url("/Screenshot Add Product.png")',
+    description:
+      "Developed a responsive Inventory Management System using Angular and Spring Boot",
+    points: [
+      "CRUD operations for products",
+      "CRUD operations for categories",
+      "JWT-based user authentication",
+      "Secure login and access control",
+      "Spring Boot for backend API development",
+      "Angular 17 for dynamic frontend interface",
+    ],
+    imageLight: 'url("product.png")',
+    imageDark: 'url("product.png")',
   },
 ];
 
@@ -89,10 +95,12 @@ export default function Features() {
               color="text.secondary"
               sx={{ mb: { xs: 2, sm: 4 } }}
             >
-              Hands-on experienced for 3 years as an Angular front-end developer in Agile lifecycle with a 
-              proven record to build progressive web applications. Excited to leverage excellent technical skill 
-              to build high quality and efficient technology solutions.
-              Recognized for consistently high performance, achieving an outstanding rating of 4 out of 4 from managers.
+              Hands-on experienced for 3 years as an Angular front-end developer
+              in Agile lifecycle with a proven record to build progressive web
+              applications. Excited to leverage excellent technical skill to
+              build high quality and efficient technology solutions. Recognized
+              for consistently high performance, achieving an outstanding rating
+              of 4 out of 4 from managers.
             </Typography>
           </div>
           <Grid
@@ -138,15 +146,40 @@ export default function Features() {
           >
             <Box
               sx={{
+                m: "auto",
+                width: 420,
+                height: 500,
+                backgroundSize: "contain",
+                backgroundPosition: "bottom",
+                backgroundRepeat: "no-repeat",
                 backgroundImage: (theme) =>
                   theme.palette.mode === "light"
                     ? items[selectedItemIndex].imageLight
                     : items[selectedItemIndex].imageDark,
-                backgroundSize: "cover",
-                backgroundPosition: "center",
-                minHeight: 280,
               }}
-            />
+            >
+              {items[selectedItemIndex].points?.map((line) => (
+                <Box
+                  key={line}
+                  sx={{
+                    py: 1,
+                    display: "flex",
+                    gap: 1.5,
+                    alignItems: "center",
+                  }}
+                >
+                  <CheckCircleRoundedIcon
+                    sx={{
+                      width: 20,
+                      color: "primary.main",
+                    }}
+                  />
+                  <Typography component="text" variant="subtitle2">
+                    {line}
+                  </Typography>
+                </Box>
+              ))}
+            </Box>
             <Box sx={{ px: 2, pb: 2 }}>
               <Typography
                 color="text.primary"
@@ -301,37 +334,36 @@ export default function Features() {
                 m: "auto",
                 width: 420,
                 height: 500,
-                backgroundSize: "contain",                
+                backgroundSize: "contain",
+                backgroundPosition: "bottom",
+                backgroundRepeat: "no-repeat",
                 backgroundImage: (theme) =>
-                  theme.palette.mode === 'light'
+                  theme.palette.mode === "light"
                     ? items[selectedItemIndex].imageLight
                     : items[selectedItemIndex].imageDark,
               }}
             >
               {items[selectedItemIndex].points?.map((line) => (
-                  <Box
-                    key={line}
+                <Box
+                  key={line}
+                  sx={{
+                    py: 1,
+                    display: "flex",
+                    gap: 1.5,
+                    alignItems: "center",
+                  }}
+                >
+                  <CheckCircleRoundedIcon
                     sx={{
-                      py: 1,
-                      display: 'flex',
-                      gap: 1.5,
-                      alignItems: 'center',
+                      width: 20,
+                      color: "primary.main",
                     }}
-                  >
-                    <CheckCircleRoundedIcon
-                      sx={{
-                        width: 20,
-                        color:'primary.main',
-                      }}
-                    />
-                    <Typography
-                      component="text"
-                      variant="subtitle2"
-                    >
-                      {line}
-                    </Typography>
-                  </Box>
-                ))}
+                  />
+                  <Typography component="text" variant="subtitle2">
+                    {line}
+                  </Typography>
+                </Box>
+              ))}
             </Box>
           </Card>
         </Grid>
