@@ -16,6 +16,7 @@ import PersonIcon from "@mui/icons-material/Person";
 import StyleIcon from "@mui/icons-material/Style";
 import AccountTreeIcon from "@mui/icons-material/AccountTree";
 import ContactPageIcon from "@mui/icons-material/ContactPage";
+import EmojiEventsIcon from '@mui/icons-material/EmojiEvents';
 
 const logoStyle = {
   width: "50px",
@@ -118,6 +119,15 @@ function AppAppBar({ mode, toggleColorMode }) {
                   </Typography>
                 </MenuItem>
                 <MenuItem
+                  onClick={() => scrollToSection("honors")}
+                  sx={{ py: 1, px: 2 }}
+                >
+                  <EmojiEventsIcon color="primary" sx={{ mr: 1 }} />
+                  <Typography variant="body2" color="text.primary">
+                    Awards
+                  </Typography>
+                </MenuItem>
+                <MenuItem
                   onClick={() => scrollToSection("contact")}
                   sx={{ py: 1, px: 2 }}
                 >
@@ -180,6 +190,10 @@ function AppAppBar({ mode, toggleColorMode }) {
                   <MenuItem onClick={() => scrollToSection("features")}>
                     <AccountTreeIcon color="primary" sx={{ mr: 1 }} />
                     Projects
+                  </MenuItem>
+                  <MenuItem onClick={() => scrollToSection("honors")}>
+                    <EmojiEventsIcon color="primary" sx={{ mr: 1 }} />
+                    Awards
                   </MenuItem>
                   <MenuItem onClick={() => scrollToSection("contact")}>
                     <ContactPageIcon color="primary" sx={{ mr: 1 }} />

@@ -11,6 +11,7 @@ import Pricing from './Pricing';
 import Hero from './Hero';
 import Testimonials from './Testimonials';
 import LogoCollection from './LogoCollection';
+import AchievementsAndHonors from './AchievementsAndHonors';
 
 export default function LandingPage() {
   const [mode, setMode] = React.useState('light');
@@ -28,6 +29,7 @@ export default function LandingPage() {
       <Hero/>
       <LogoCollection/>
       <Features/>  
+      <AchievementsAndHonors/>
       <Footer />
     </ThemeProvider>
   );
