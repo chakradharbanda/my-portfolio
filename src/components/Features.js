@@ -36,6 +36,7 @@ const items = [
     ],
     imageLight: "null",
     imageDark: "null",
+    link: "https://www.infosys.com/services/application-development-maintenance.html",
   },
   {
     icon: <EdgesensorHighRoundedIcon />,
@@ -57,6 +58,7 @@ const items = [
     ],
     imageLight: "null",
     imageDark: "null",
+    link: "https://www.linkedin.com/showcase/infosys-digital-experience/",
   },
   {
     icon: <DevicesRoundedIcon />,
@@ -73,6 +75,7 @@ const items = [
     ],
     imageLight: `url(${process.env.PUBLIC_URL}/product.png)`,
     imageDark: `url(${process.env.PUBLIC_URL}/product.png)`,
+    link: "https://github.com/chakradharbanda/inventory",
   },
 ];
 
@@ -196,6 +199,7 @@ export default function Features() {
                 {selectedFeature.description}
               </Typography>
               <Link
+                href={selectedFeature.link}
                 color="primary"
                 variant="body2"
                 fontWeight="bold"
@@ -205,6 +209,8 @@ export default function Features() {
                   "& > svg": { transition: "0.2s" },
                   "&:hover > svg": { transform: "translateX(2px)" },
                 }}
+                target="_blank" // Opens link in a new tab
+                rel="noopener noreferrer"
               >
                 <span>Learn more</span>
                 <ChevronRightRoundedIcon
@@ -222,7 +228,7 @@ export default function Features() {
             useFlexGap
             sx={{ width: "100%", display: { xs: "none", sm: "flex" } }}
           >
-            {items.map(({ icon, title, description }, index) => (
+            {items.map(({ icon, title, description, link }, index) => (
               <Card
                 key={index}
                 variant="outlined"
@@ -289,6 +295,7 @@ export default function Features() {
                       {description}
                     </Typography>
                     <Link
+                      href={link}
                       color="primary"
                       variant="body2"
                       fontWeight="bold"
@@ -301,6 +308,8 @@ export default function Features() {
                       onClick={(event) => {
                         event.stopPropagation();
                       }}
+                      target="_blank" // Opens link in a new tab
+                      rel="noopener noreferrer"
                     >
                       <span>Learn more</span>
                       <ChevronRightRoundedIcon
