@@ -71,8 +71,8 @@ const items = [
       "Spring Boot for backend API development",
       "Angular 17 for dynamic frontend interface",
     ],
-    imageLight: 'url("product.png")',
-    imageDark: 'url("product.png")',
+    imageLight: `url(${process.env.PUBLIC_URL}/product.png)`,
+    imageDark: `url(${process.env.PUBLIC_URL}/product.png)`,
   },
 ];
 

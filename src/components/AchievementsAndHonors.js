@@ -5,12 +5,12 @@ const awards = [
   {
     title: 'Rookie of the Unit Award 2023',
     description: 'Awarded for outstanding contributions to development projects.',
-    imgSrc: 'hyper2.jpg',
+    imgSrc: `${process.env.PUBLIC_URL}/hyper2.jpg`,
   },
   {
     title: 'Certificate of Excellence 2022',
     description: 'Recognized for exceptional performance and dedication.',
-    imgSrc: 'hyper1.jpeg',
+    imgSrc: `${process.env.PUBLIC_URL}/hyper1.jpeg`,
   },
 ];
 

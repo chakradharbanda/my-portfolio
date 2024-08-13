@@ -88,7 +88,7 @@ function AppAppBar({ mode, toggleColorMode }) {
                 px: 0,
               }}
             >
-              <img src={"hyper.png"} style={logoStyle} alt="logo of sitemark" />
+              <img src={`${process.env.PUBLIC_URL}/hyper.png`} style={logoStyle} alt="logo of sitemark" />
               <Box sx={{ display: { xs: "none", md: "flex" } }}>
                 <MenuItem
                   onClick={() => scrollToSection("hero")}
