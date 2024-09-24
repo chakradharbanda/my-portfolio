@@ -3,6 +3,11 @@ import { Container, Typography, Card, CardContent, CardMedia, Grid } from '@mui/
 
 const awards = [
   {
+    title: 'Certificate of Appreciation 2024',
+    description: 'Recognized for exceptional performance and dedication.',
+    imgSrc: `${process.env.PUBLIC_URL}/hyper4.png`,
+  },
+  {
     title: 'Rookie of the Unit Award 2023',
     description: 'Awarded for outstanding contributions to development projects.',
     imgSrc: `${process.env.PUBLIC_URL}/hyper2.jpg`,
@@ -17,7 +22,7 @@ const awards = [
 const AchievementsAndHonors = () => {
   return (
     <Container id="honors">
-      <Grid container spacing={4}>
+      <Grid container spacing={4} justifyContent="center" alignItems="center">
         {awards.map((award, index) => (
           <Grid item xs={12} md={6} key={index}>
             <Card variant="outlined">
